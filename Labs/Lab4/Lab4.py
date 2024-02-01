@@ -22,9 +22,10 @@ def maptwice(fn, seq):
     >>> maptwice(lambda x: x*x, [1, 2, 3])
     [1, 16, 81]
     """
-    for i in range (len(seq)):
-        seq[i] = fn(fn(seq[i]))
-    return seq
+    return [fn(fn(item)) for item in seq]
+    # for i in range (len(seq)):
+    #     seq[i] = fn(fn(seq[i]))
+    # return seq
 
 #RQ3
 def filterout(pred, seq):
