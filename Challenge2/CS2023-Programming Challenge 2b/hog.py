@@ -98,3 +98,7 @@ def always_roll(n):
     def strategy(score, opponent_score):
         return n
     return strategy
+
+import doctest
+if __name__ == "__main__":
+  doctest.testmod(verbose=True)

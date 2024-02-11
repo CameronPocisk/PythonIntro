@@ -1,4 +1,4 @@
-## Lab 5: Required Questions - Dictionaries  ##
+# Lab 5: Required Questions - Dictionaries  ##
 
 # RQ1
 def merge(dict1, dict2):
@@ -8,15 +8,8 @@ def merge(dict1, dict2):
     >>> new == {1: 'one', 2: 'two', 3: 'three', 4: 'four', 5: 'five'}
     True
     """
-    dict1Size = dict1.len()
-    dict2Size = dict2.len()
-
-    dict1Keys = dict1.keys()
-    dict2Keys = dict2.keys()
-
-    for i in range(max(dict1Size, dict2Size)):
-        if(i )
-
+    return dict1 | dict2
+   
 
 
 # RQ2
@@ -125,10 +118,18 @@ def middle_tweet():
     >>> len(middle_tweet()) < 100
     True
     """
+    stringLengthDict = {}
     for i in range(5):
-        print (random_tweet())
-    return random_tweet()
-        
+        currentTweet = random_tweet()
+        stringLengthDict[len(currentTweet)] = currentTweet
+
+    #Grab middle item
+    orderendLengths = []
+    for key in stringLengthDict:
+        orderendLengths.append(key)
+    orderendLengths.sort()
+
+    return stringLengthDict[orderendLengths[2]]
 
 import doctest
 if __name__ == "__main__":
