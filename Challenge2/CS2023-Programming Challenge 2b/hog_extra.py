@@ -1,6 +1,8 @@
 #######################
 # Phase 2: Strategies #
 #######################
+from dice import four_sided, six_sided, make_test_dice
+
 
 def always_roll(n):
     """Return a strategy that always rolls N dice.
@@ -40,7 +42,13 @@ def make_averaged(fn, num_samples=1000):
     Thus, the average value is 6.0.
     """
     # BEGIN Question 6
-    "*** REPLACE THIS LINE ***"
+    def averagedFunction(*args):
+        sumOfCalls = 0
+        for i in range (num_samples):
+            sumOfCalls += fn()
+            print(str(fn()))
+        return (sumOfCalls / num_samples)
+    return averagedFunction
     # END Question 6
 
 def max_scoring_num_rolls(dice=six_sided, num_samples=1000):
@@ -132,7 +140,7 @@ def final_strategy(score, opponent_score):
 #       of Python not yet covered in the course.
 
 
-@main
+# @main
 def run(*args):
     """Read in the command-line argument and calls corresponding functions.
 
@@ -154,3 +162,8 @@ def run(*args):
         print('Your final_strategy win rate is')
         print('    ', win_rate)
         print('(or {}%)'.format(round(win_rate * 100, 2)))
+
+
+import doctest
+if __name__ == "__main__":
+  doctest.testmod(verbose=True)
