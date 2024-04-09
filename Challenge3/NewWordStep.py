@@ -10,15 +10,14 @@ words = wordfile.read().decode('utf-8').upper().split()
 def AllSteps(wordIn):
     WordSteps = []
     wordIn = wordIn.upper()
-    # Get all words that are one letter more
+    # Go through all words that are one letter more
     for word in words:
         if(len(word) == len(wordIn) + 1):
-            # Itterate through a copy of the base word
-            wordInCopy = wordIn
+            wordInCopy = wordIn # Itterate through a copy of the base word
             for letter in word:
                 if letter in wordInCopy:
                     wordInCopy = wordInCopy.replace(letter, "", 1) # Third param says to replace one instance of it.
-            #If you can remove all the letters with a word 1 greater than it is a step
+            #If you can remove all the letters with a word 1 greater, it is a step
             if len(wordInCopy) == 0:
                 WordSteps.append(word)
 
